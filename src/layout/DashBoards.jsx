@@ -1,11 +1,14 @@
 import { Link, Outlet } from "react-router-dom";
+import useAuth from "../hooks/Auth/useAuth";
 
 const DashBoards = () => {
+  const user= useAuth();
+  console.log("auth", user);
   return (
     <>
       <div className="flex justify-between mx-3 my-1">
         <h4>list</h4>
-        <h3>User name</h3>
+        <h3>User name:{user?.displayName}</h3>
       </div>
       <div className="grid grid-cols-5 mx-3 my-12">
         <div className="h-screen col-span-1 bg-slate-600">
