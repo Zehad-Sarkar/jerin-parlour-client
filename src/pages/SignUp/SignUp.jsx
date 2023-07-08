@@ -83,6 +83,7 @@ const SignUp = () => {
         <div className="form-control">
           <label htmlFor="FirstName">First Name</label>
           <input
+            type="text"
             className="p-1 border-2 rounded-sm"
             placeholder="firstName"
             {...register("firstName", { required: true })}
