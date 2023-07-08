@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.card{
+  @apply p-3 bg-gray-200 rounded-md shadow
+}
