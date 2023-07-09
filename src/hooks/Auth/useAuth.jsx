@@ -5,5 +5,4 @@ const useAuth = () => {
   const { user } = useContext(AuthContext);
   return user;
 };
-
 export default useAuth;

@@ -6,7 +6,6 @@ const MakeAdmin = () => {
     e.preventDefault();
     const email = e.target.email.value;
     axios.patch(`http://localhost:4000/makeAdmin/${email}`).then((data) => {
-      // console.log(data.data);
       //update message
     });
   };

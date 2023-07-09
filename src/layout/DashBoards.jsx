@@ -1,10 +1,11 @@
 import { Link, Outlet } from "react-router-dom";
 import useAuth from "../hooks/Auth/useAuth";
+import useAdmin from "../hooks/Auth/useAdmin";
 
 const DashBoards = () => {
   const user = useAuth();
-  const admin = true;
-  // const admin = false;
+  const isAdmin = useAdmin();
+
   return (
     <>
       <div className="flex justify-between mx-3 my-1">
@@ -15,9 +16,8 @@ const DashBoards = () => {
       </div>
       <div className="grid grid-cols-5 mx-3 my-12">
         <div className="h-screen col-span-1 bg-slate-600">
-          {admin ? (
+          {isAdmin ? (
             <>
-              
               <ul className="flex flex-col px-2 text-white">
                 <Link to="/dashboard/orderList">Order list</Link>
                 <Link to="/dashboard/AddService">Add service</Link>
