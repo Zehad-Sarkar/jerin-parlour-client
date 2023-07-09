@@ -10,7 +10,13 @@ const Review = () => {
     const name = e.target.name.value;
     const companyName = e.target.companyName.value;
     const message = e.target.description.value;
-    const reviews = { name, companyName, email: user.email, message };
+    const reviews = {
+      name,
+      companyName,
+      email: user.email,
+      message,
+      image: user?.photoURL,
+    };
 
     axios.post("http://localhost:4000/reviews", reviews).then((res) => {
       if (res.data.insertedId) {
