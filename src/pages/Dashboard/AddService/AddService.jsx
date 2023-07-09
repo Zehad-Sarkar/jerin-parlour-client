@@ -79,7 +79,7 @@ const AddService = () => {
           type="text"
           col="30"
           rows="5"
-          className="w-3/4 border-2 rounded-md resize-none"
+          className="w-3/4 p-2 border-2 rounded-md resize-none"
           {...register("description")}
         />
       </div>

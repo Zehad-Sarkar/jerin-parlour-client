@@ -57,7 +57,7 @@ const SignUp = () => {
         data.confirmPassword
       );
       const userInfo = {
-        fullName: data.firstName + " " + data.lastName,
+        name: data.firstName + " " + data.lastName,
         email: data.email,
         imgURL,
       };

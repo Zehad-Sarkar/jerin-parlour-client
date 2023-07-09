@@ -1,7 +1,8 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { FaGoogle } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
+import axios from "axios";
 
 const SocialLogin = () => {
   const navigate = useNavigate();
@@ -9,15 +10,23 @@ const SocialLogin = () => {
 
   // google login event handler
   const handleGoogleLogin = () => {
-     
     googleLogin()
       .then((result) => {
         const loggedUser = result.user;
-        console.log(loggedUser);
+        const savedUser = {
+          name: loggedUser.displayName,
+          email: loggedUser.email,
+          imgURL: loggedUser.photoURL,
+        };
+
+        axios.post("http://localhost:4000/user", savedUser).then((data) => {
+          //user updated
+        });
       })
       .catch((err) => {
         console.log(err.message);
       });
+
     navigate("/");
   };
   return (
@@ -30,12 +39,6 @@ const SocialLogin = () => {
           <FaGoogle className="text-3xl" /> Continue with google
         </button>
       </div>
-      {/* <p>
-        Don't have an account?
-        <Link to="/signup" className="text-blue-400">
-          create an account.
-        </Link>
-      </p> */}
     </div>
   );
 };

@@ -9,7 +9,7 @@ const Review = () => {
           <input type="text" className="p-2 border-2" placeholder="full name" />
         </div>
         <div className="form-control">
-          <label htmlFor="companyName">Name</label>
+          <label htmlFor="companyName">Company Name</label>
           <input
             type="text"
             className="p-2 border-2"

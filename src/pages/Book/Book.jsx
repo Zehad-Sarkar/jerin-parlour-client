@@ -9,7 +9,7 @@ const Book = () => {
   return (
     <div className="grid grid-cols-5">
       {/* left side */}
-      <div className="col-span-1 px-2 py-3">
+      {/* <div className="col-span-1 px-2 py-3">
         <div className="flex items-center gap-2">
           <img src={logo} alt="" className="w-12 h-12 rounded-full" />
           <h3 className="text-3xl font-bold">
@@ -22,7 +22,7 @@ const Book = () => {
           <Link to="/bookingList">Bookings list</Link> <br />
           <Link to='/review'>Review</Link>
         </div>
-      </div>
+      </div> */}
       {/* right side */}
       <div className="col-span-4 ">
         <form

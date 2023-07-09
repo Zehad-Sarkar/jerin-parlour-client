@@ -14,7 +14,7 @@ const Login = () => {
   // if (user === null) {
   //   return <div>Loading...</div>;
   // }
-  console.log(user);
+  // console.log(user);
   return (
     <div className="my-16">
       <div className="flex items-center justify-center gap-2">

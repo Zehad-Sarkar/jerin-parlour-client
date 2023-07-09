@@ -20,18 +20,18 @@ export const router = createBrowserRouter([
         path: "/",
         element: <Home />,
       },
-      {
-        path: "booking",
-        element: <Book />,
-      },
-      {
-        path: "bookingList",
-        element: <BookingList />,
-      },
-      {
-        path: "review",
-        element: <Review />,
-      },
+      // {
+      //   path: "booking",
+      //   element: <Book />,
+      // },
+      // {
+      //   path: "bookingList",
+      //   element: <BookingList />,
+      // },
+      // {
+      //   path: "review",
+      //   element: <Review />,
+      // },
       {
         path: "login",
         element: <Login />,
@@ -61,6 +61,18 @@ export const router = createBrowserRouter([
       {
         path: "manageService",
         element: <ManageService />,
+      },
+      {
+        path: "book",
+        element: <Book />,
+      },
+      {
+        path: "bookingList",
+        element: <BookingList />,
+      },
+      {
+        path: "review",
+        element: <Review />,
       },
     ],
   },
