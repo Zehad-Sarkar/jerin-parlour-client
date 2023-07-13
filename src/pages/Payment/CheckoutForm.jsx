@@ -1,6 +1,12 @@
+import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import React from "react";
 
 const CheckoutForm = () => {
+  const stripe = useStripe();
+  const element = useElements();
+  const handleSubmit = () => {
+    console.log("submit");
+  };
   return (
     <form onSubmit={handleSubmit}>
       <CardElement
@@ -26,10 +32,6 @@ const CheckoutForm = () => {
       >
         Pay
       </button>
-      {/* {cardError && <p>{cardError}</p>}
-      {transactionId && (
-        <p>Transaction completed with transactionId: {transactionId}</p>
-      )} */}
     </form>
   );
 };

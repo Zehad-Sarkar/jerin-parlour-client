@@ -1,7 +1,8 @@
+import axios from "axios";
 import React from "react";
 
 const Communicate = () => {
-  const handleSendMessage = (e) => {
+  const handleSendMessage = async (e) => {
     e.preventDefault();
     const form = e.target;
     const firstName = form.firstName.value;
@@ -10,6 +11,20 @@ const Communicate = () => {
     const phone = form.phone.value;
     const textarea = form.textarea.value;
     console.log("click", firstName, lastName, email, phone, textarea);
+    // const SERVER_URL = "http://localhost:4000";
+    // try {
+    //   await axios.post(`${SERVER_URL}/send-email`, {
+    //     firstName,
+    //     lastName,
+    //     email,
+    //     phone,
+    //     message: textarea,
+    //   });
+
+    //   console.log("email send successful");
+    // } catch (error) {
+    //   console.log("not sent success", error);
+    // }
   };
   return (
     <div className="">
@@ -49,7 +64,6 @@ const Communicate = () => {
             cols="30"
             rows="10"
             className="border-2 resize-none"
-            
           ></textarea>
         </div>
         <button type="submit" className="mt-2 text-center btn btn-primary">

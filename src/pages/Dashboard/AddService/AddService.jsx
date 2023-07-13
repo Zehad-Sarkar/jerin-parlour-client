@@ -5,7 +5,6 @@ import useAuth from "../../../hooks/Auth/useAuth";
 import Swal from "sweetalert2";
 // imgBB image hosting api key
 const image_hosting_token = import.meta.env.VITE_IMAGE_UPLOAD_TOKEN;
-// console.log('host token',image_hosting_token);
 
 const AddService = () => {
   const user = useAuth();
@@ -31,9 +30,10 @@ const AddService = () => {
         // console.log(imgData);
         if (imgData.status) {
           const imgURL = imgData.data.display_url;
-          const { service, description } = data;
+          const { service, description, price } = data;
           const newService = {
             service,
+            price: parseFloat(price),
             image: imgURL,
             description,
             email: user?.email,
@@ -72,6 +72,15 @@ const AddService = () => {
       <div className="form-control">
         <label htmlFor="service photo">Service Photo</label>
         <input type="file" className="border-2" {...register("photo")} />
+      </div>
+      <div className="form-control">
+        <label htmlFor="service title">Service Price</label>
+        <input
+          type="number"
+          className="border-2"
+          placeholder="service price"
+          {...register("price")}
+        />
       </div>
       <div className="form-control">
         <label htmlFor="service description">Service Description</label>

@@ -2,7 +2,7 @@ import banner2 from "../../../assets/image2.avif";
 
 const CustomerView = () => {
   return (
-    <div className="items-center gap-4 my-20 lg:flex">
+    <div className="items-center gap-4 my-20 lg:flex md:flex">
       <img src={banner2} alt="image" className="w-full h-96 rounded-xl" />
       <div className="space-y-4">
         <h2 className="text-4xl font-bold">
